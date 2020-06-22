@@ -1,0 +1,12 @@
+.header{
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    margin: 15px;
+}
