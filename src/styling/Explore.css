@@ -1,0 +1,9 @@
+.explore{
+    margin: auto;
+    text-align: center;
+}
+
+input, button{
+    margin: 2px;
+    padding: 5px;
+}

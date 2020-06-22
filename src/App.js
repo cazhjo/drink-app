@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
+import Explore from './pages/Explore';
 import Header from './components/Header'
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
         <Header />
         <Switch>
             <Route path='/' component={Home} exact />
+            <Route path='/explore' component={Explore} />
         </Switch>
         </div>
     </BrowserRouter>
