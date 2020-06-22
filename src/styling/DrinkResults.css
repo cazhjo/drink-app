@@ -1,0 +1,8 @@
+.drink-results{
+    margin: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

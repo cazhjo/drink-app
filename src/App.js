@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
+import Drink from './pages/Drink';
 import Header from './components/Header'
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
         <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/explore' component={Explore} />
+            <Route path='/drink/:id' component={Drink} />
         </Switch>
         </div>
     </BrowserRouter>
