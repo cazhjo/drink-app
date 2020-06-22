@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
 import Drink from './pages/Drink';
+import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header'
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
             <Route path='/' component={Home} exact />
             <Route path='/explore' component={Explore} />
             <Route path='/drink/:id' component={Drink} />
+            <Route component={NotFoundPage} />
         </Switch>
         </div>
     </BrowserRouter>
