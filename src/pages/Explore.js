@@ -7,31 +7,26 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 const Explore = (props) => {
     const [hasSearched, setHasSearched] = useState(false);
-    const [drinks, setDrinks] = useState();
+    const [text, setText] = useState('');
+    const [drinks, setDrinks] = useState([]);
     let history = useHistory();
     let location = useLocation();
 
     useEffect(() => {
         let searchString = location.search.slice(8);
-        doSearch(searchString)
+        searchString && doSearch(searchString)
     }, [location])
 
     const doSearch = (searchString) => {
-        if(searchString){
-            const filteredDrinks = data.cocktails.filter(cocktail => cocktail.name.toLowerCase().includes(searchString.toLowerCase()));
-            setHasSearched(true);
-            setDrinks(filteredDrinks);
-        }
-        else{
-            setDrinks([]);
-            setHasSearched(false);
-        }
+        const filteredDrinks = data.cocktails.filter(cocktail => cocktail.name.toLowerCase().includes(searchString.toLowerCase()));
+        setHasSearched(true);
+        setDrinks(filteredDrinks);
     }
 
     const onSearch = (e) => {
         e.preventDefault();
-        let text = e.target.elements.searchInput.value;
         e.target.elements.searchInput.value = '';
+        setText('');
         history.push(`/explore?search=${text}`)
     }
 
@@ -39,8 +34,8 @@ const Explore = (props) => {
         <div className='explore'>
             <Title text='Find your favourite drink!' textColor='rgb(150, 62, 185)' />
             <form onSubmit={onSearch}>
-                <input type="text" name="searchInput" />
-                <button>Search</button>
+                <input type="text" onChange={(e) => setText(e.target.value)} name="searchInput" />
+                <button disabled={!text}>Search</button>
             </form>
             {hasSearched && <DrinkResults arrayOfDrinks={drinks} />}
         </div>
