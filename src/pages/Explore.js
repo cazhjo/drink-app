@@ -18,7 +18,7 @@ const Explore = (props) => {
 
     const doSearch = (searchString) => {
         if(searchString){
-            const filteredDrinks = data.cocktails.filter(cocktail => cocktail.name.toLowerCase().includes(searchString));
+            const filteredDrinks = data.cocktails.filter(cocktail => cocktail.name.toLowerCase().includes(searchString.toLowerCase()));
             setHasSearched(true);
             setDrinks(filteredDrinks);
         }

@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className='home'>
             <Title text='Welcome to The Cocktail Explorer' textColor='rgb(62, 62, 185)' />
-            <img src={image} />
+            <img src={image} alt='home '/>
         </div>
     )
 }
